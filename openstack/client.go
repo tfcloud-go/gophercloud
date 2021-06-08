@@ -22,3 +22,9 @@ func initClientOpts(client *gophercloud.ProviderClient, eo gophercloud.EndpointO
 func NewTradingV2(client *gophercloud.ProviderClient, eo gophercloud.EndpointOpts) (*gophercloud.ServiceClient, error) {
 	return initClientOpts(client, eo, "trading")
 }
+
+func NewMessagingV2(client *gophercloud.ProviderClient, clientID string, eo gophercloud.EndpointOpts) (*gophercloud.ServiceClient, error) {
+	sc, err := initClientOpts(client, eo, "messaging")
+	sc.MoreHeaders = map[string]string{"Client-ID": clientID}
+	return sc, err
+}
