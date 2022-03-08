@@ -2,4 +2,4 @@ module github.com/tfcloud-go/gophercloud
 
 go 1.15
 
-require github.com/gophercloud/gophercloud v0.17.0
+require github.com/gophercloud/gophercloud v0.24.0
